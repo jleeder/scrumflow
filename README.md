@@ -29,7 +29,7 @@ You stay in control. No phase runs without your explicit approval.
 Clone or copy this repository into your VS Code workspace or user-level Copilot instructions directory so that Copilot can discover the agent and skill definitions.
 
 ```bash
-git clone https://github.com/tributetechnology/scrumflow
+git clone https://github.com/jleeder/scrumflow
 ```
 
 Then open the folder (or a workspace that includes it) in VS Code. Copilot will pick up the `SKILL.md` definitions automatically.
