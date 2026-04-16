@@ -26,13 +26,22 @@ You stay in control. No phase runs without your explicit approval.
 
 ## Installation
 
-Clone or copy this repository into your VS Code workspace or user-level Copilot instructions directory so that Copilot can discover the agent and skill definitions.
+Install directly from GitHub with Copilot CLI:
 
 ```bash
-git clone https://github.com/jleeder/scrumflow
+copilot plugin install jleeder/scrumflow
 ```
 
-Then open the folder (or a workspace that includes it) in VS Code. Copilot will pick up the `SKILL.md` definitions automatically.
+Then verify installation:
+
+```bash
+copilot plugin list
+```
+
+This plugin manifest loads:
+- Root orchestrator from `SKILL.md`
+- Reusable tool skills from `skills/*/SKILL.md`
+- Role-scoped agent skills from `agents/*/SKILL.md`
 
 ## Usage
 

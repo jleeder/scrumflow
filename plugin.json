@@ -1,0 +1,22 @@
+{
+  "name": "scrumflow",
+  "description": "Structured, human-in-the-loop feature development pipeline for GitHub Copilot.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Josh Leeder"
+  },
+  "homepage": "https://github.com/jleeder/scrumflow",
+  "repository": "https://github.com/jleeder/scrumflow",
+  "license": "MIT",
+  "keywords": [
+    "copilot",
+    "agentic-workflow",
+    "tdd",
+    "scrum"
+  ],
+  "skills": [
+    ".",
+    "skills/",
+    "agents/"
+  ]
+}
