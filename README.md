@@ -38,6 +38,11 @@ Then verify installation:
 copilot plugin list
 ```
 
+This plugin manifest loads:
+- Root orchestrator from `SKILL.md`
+- Reusable tool skills from `skills/*/SKILL.md`
+- Role-scoped agent skills from `agents/*/SKILL.md`
+
 ## Usage
 
 Open GitHub Copilot chat in agent mode and describe what you want to build. ScrumFlow activates on natural triggers:
