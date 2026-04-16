@@ -14,9 +14,8 @@
     "tdd",
     "scrum"
   ],
+  "agents": ["agents/", "."],
   "skills": [
-    ".",
-    "skills/",
-    "agents/"
+    "skills/"
   ]
 }
