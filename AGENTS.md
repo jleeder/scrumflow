@@ -21,7 +21,7 @@ Copilot reads them as grounded context. They must be:
 ```
 SKILL.md                        # Top-level orchestrator instructions
 agents/
-  <role>/SKILL.md               # One agent per discrete pipeline role
+  <role>.agent.md               # One agent per discrete pipeline role
 skills/
   setup/SKILL.md                # Project initialization and configuration
   <tool>/SKILL.md               # One skill per atomic reusable capability
@@ -38,11 +38,11 @@ templates/
 
 ---
 
-## Writing Agent Instructions (`agents/*/SKILL.md`)
+## Writing Agent Instructions (`agents/*.agent.md`)
 
 ### Required Sections
 
-Each agent `SKILL.md` must contain:
+Each agent `.agent.md` must contain:
 
 0. **Initialization & Discovery** — The agent MUST begin its execution by:
    - **Announcing identity:** "I am the [Role] for this ScrumFlow phase."
@@ -145,9 +145,9 @@ These rules apply specifically because this plugin runs inside GitHub Copilot's 
 
 ## Adding a New Agent
 
-1. Create `agents/<role>/SKILL.md` following the required sections above.
+1. Create `agents/<role>.agent.md` following the required sections above.
 2. Assign a stable skill ID following the `scrumflow-<role>` naming convention.
-3. Register the agent in the top-level `SKILL.md` orchestrator — add it to the pipeline phase table and any relevant trigger conditions.
+3. Register the agent in the top-level `scrumflow.agent.md` orchestrator — add it to the pipeline phase table and any relevant trigger conditions.
 4. Add a template to `templates/` if the agent produces a new artifact type.
 5. Document the gate behavior (or explicitly note there is no gate for this agent).
 6. Update `README.md` to include the new agent in the agents table.

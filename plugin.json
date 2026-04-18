@@ -14,7 +14,7 @@
     "tdd",
     "scrum"
   ],
-  "agents": ["agents/", "."],
+  "agents": ["scrumflow.agent.md", "agents/"],
   "skills": [
     "skills/"
   ]
