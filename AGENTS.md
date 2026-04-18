@@ -44,6 +44,10 @@ templates/
 
 Each agent `SKILL.md` must contain:
 
+0. **Initialization & Discovery** — The agent MUST begin its execution by:
+   - **Announcing identity:** "I am the [Role] for this ScrumFlow phase."
+   - **Scanning for local context:** Searching the project workspace (e.g., `.agents/skills/`, `.github/copilot-instructions.md`, or specific `docs/` folders) for project-specific skills, guidelines, or templates relevant to its domain.
+   - **Announcing discovery:** "I have discovered and will be leveraging the following local skills/context: [List]."
 1. **Role identity** — A single sentence stating what this agent is and is not responsible for.
 2. **Inputs** — Explicit list of what the agent reads (state files, artifacts, user input).
 3. **Outputs** — Explicit list of what the agent writes and where (`.scrum-flow/<subdir>/`).
