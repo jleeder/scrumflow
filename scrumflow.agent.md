@@ -238,7 +238,3 @@ Override any component:
 `state.json` phases: `product-owner` → `test-author` → `architect` → `engineer` → `code-reviewer` → `post-review` → `complete`
 
 Gates record ISO timestamps on approval. The Orchestrator checks for required gate timestamps before advancing to the next phase — a phase cannot start without its prerequisite gate being recorded.
-ing recorded.
-recorded.
-ng recorded.
-ing recorded.
