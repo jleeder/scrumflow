@@ -95,7 +95,6 @@ All pipeline state is tracked in `.scrum-flow/` inside your worktree (never comm
 ```
 .scrum-flow/
 ├── state.json          # Current phase, gate approvals, task status
-├── config.json         # Model assignments, git config, MCP settings
 ├── stories/            # STORY-NNN.md
 ├── tests/              # BDD-NNN.md
 ├── tasks/              # TASK-NNN-docs.md + task list
@@ -119,7 +118,6 @@ Add `.scrum-flow/` to your `.gitignore`.
 
 | Skill | Skill ID | Purpose |
 |---|---|---|
-| Setup | `scrumflow-setup` | Project initialization and configuration |
 | Red Test | `scrumflow-red-test` | Convert BDD scenarios to failing tests |
 | Test Runner | `scrumflow-test-runner` | Execute test suite, report pass/fail |
 | Green Code | `scrumflow-green-code` | Write minimum code to pass tests |

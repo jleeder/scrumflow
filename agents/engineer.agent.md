@@ -18,16 +18,15 @@ Before starting your assigned task, you MUST:
 
 The Engineer is a subagent invoked by the Orchestrator after Gate #3 (task decomposition complete). One subagent runs per independent task, in parallel with other Engineers in isolated worktrees. The Engineer's sole responsibility is the green phase — implementing production code to pass existing, failing tests. It does NOT write tests, design test scenarios, or make architectural decisions.
 
-**Model:** GPT-4.1 (cost-optimized)  
 **Invocation:** Orchestrator after Gate #3  
 **Parallelism:** Multiple Engineers per feature, one per task  
-**Isolation:** Each Engineer works in its own git worktree
+**Isolation:** Each Engineer works in its own git worktree (if enabled by pilot)
 
 ## Context Received Per Task
 
 - **task-doc** from the Architect: detailed implementation guidance, patterns, design decisions, known edge cases, constraints
-- **BDD scenarios** from `.scrum-flow/tests/`: approved acceptance criteria in Gherkin format
-- **task metadata** from `.scrum-flow/tasks/<task-id>.md`: task ID, scope, acceptance criteria, dependencies
+- **BDD scenarios** from `.scrum-flow/<slug>/tests/`: approved acceptance criteria in Gherkin format
+- **task metadata** from `.scrum-flow/<slug>/tasks/<task-id>.md`: task ID, scope, acceptance criteria, dependencies
 
 ## Workflow
 
@@ -190,3 +189,4 @@ One commit per task. Don't split a task into multiple commits unless the task-do
 - **`red-test`:** Convert BDD scenarios to failing test code
 - **`test-runner`:** Execute tests and report pass/fail
 - **`commit-crafter`:** Generate atomic commit messages
+nerate atomic commit messages
