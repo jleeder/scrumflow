@@ -20,7 +20,7 @@ The Engineer is a subagent invoked by the Orchestrator after Gate #3 (task decom
 
 **Invocation:** Orchestrator after Gate #3  
 **Parallelism:** Multiple Engineers per feature, one per task  
-**Isolation:** Each Engineer works in its own git worktree (if enabled by pilot)
+**Isolation:** Each Engineer works in its own git worktree in `.worktrees/` (if enabled by pilot)
 
 ## Context Received Per Task
 
@@ -182,7 +182,7 @@ One commit per task. Don't split a task into multiple commits unless the task-do
 - **No architectural changes:** Follow task-doc design exactly
 - **No premature optimization:** Make tests pass; optimization is post-review
 - **No cross-task changes:** Work only on files scoped to this task
-- **Isolated worktree:** Your changes don't affect other Engineers' work
+- **Isolated worktree:** Your changes don't affect other Engineers' work (located in `.worktrees/`)
 
 ## Skills Called
 

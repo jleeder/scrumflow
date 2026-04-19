@@ -137,7 +137,7 @@ Same pattern. On approve: record `gates.plan_approval`, read the task dependency
 If `use_subagents` is **true**:
 ...
 If `use_worktrees` is **true**:
-Each subagent works in its own nested worktree. Reconciliation (merging into the feature branch) is handled by the Orchestrator after each task completes.
+Each subagent works in its own nested worktree located in `.worktrees/<slug>-<task-id>/`. Reconciliation (merging into the feature branch) is handled by the Orchestrator after each task completes.
 
 Else (Single Agent):
 Execute tasks sequentially on the `scrum/<slug>` branch in the current session.
@@ -146,7 +146,7 @@ Each Engineer subagent (selected model) receives:
 - Its task-doc: `.scrum-flow/<slug>/tasks/TASK-NNN-<slug>-docs.md`
 - The relevant BDD scenarios from `.scrum-flow/<slug>/tests/`
 - Path to skills: `red-test`, `test-runner`, `green-code`, `commit-crafter`
-- Worktree isolation: each subagent works in its own nested worktree branched from `scrum/<slug>`
+- Worktree isolation: each subagent works in its own nested worktree in `.worktrees/<slug>-<task-id>/` branched from `scrum/<slug>`
 
 Spawn Engineer subagents using the `scrumflow-engineer.agent.md` file.
 

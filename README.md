@@ -73,7 +73,7 @@ Reads the approved BDD spec and produces a complete technical plan: task decompo
 **Gate 3:** Approve or refine the plan before implementation begins.
 
 ### Phase 4 — Engineer(s) (`scrumflow-engineer`)
-One subagent per task, running in parallel in isolated git worktrees. Each Engineer follows a strict Red → Green → Commit TDD cycle:
+One subagent per task, running in parallel in isolated git worktrees (managed in `.worktrees/`). Each Engineer follows a strict Red → Green → Commit TDD cycle:
 1. Convert BDD scenarios to failing tests (`scrumflow-red-test`)
 2. Run tests, confirm red state (`scrumflow-test-runner`)
 3. Write minimum production code to pass (`scrumflow-green-code`)
@@ -129,7 +129,7 @@ Add `.scrum-flow/` to your `.gitignore`.
 
 - **Human-in-the-loop**: Agents cannot advance past a gate without explicit approval.
 - **TDD by default**: Code is always written in response to failing tests.
-- **Isolation**: Each Engineer runs in its own git worktree to avoid conflicts.
+- **Isolation**: Each Engineer runs in its own git worktree in `.worktrees/` to avoid conflicts.
 - **Rich context transfer**: The Architect writes detailed task-docs so cheaper Engineer models have full context without needing to re-reason from scratch.
 - **Model-cost optimization**: Premium models handle planning and review; cheaper models handle implementation and tooling.
 - **Atomic commits**: One commit per task, linked to story and task IDs.

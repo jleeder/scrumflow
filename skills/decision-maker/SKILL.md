@@ -25,7 +25,7 @@ Before Phase 4 (Engineer) starts, analyze the task list and dependency graph fro
 
 ### 3. Isolation Strategy (Phase 4 Only)
 - **Default (Current Branch):** Recommend this if using a Single Agent or if the user wants to avoid filesystem clutter.
-- **Git Worktrees:** Recommend ONLY when using Parallel Subagents to prevent filesystem conflicts and allow concurrent test runs. Avoid for serial execution.
+- **Git Worktrees:** Recommend ONLY when using Parallel Subagents to prevent filesystem conflicts and allow concurrent test runs. These are created in `.worktrees/` to avoid filesystem clutter. Avoid for serial execution.
 
 ## Workflow
 

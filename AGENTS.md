@@ -118,7 +118,7 @@ All pipeline state lives in `.scrum-flow/` and is **never committed to git**.
 
 When adding features that touch the Engineer phase or task dispatch:
 
-- Each Engineer subagent runs in an isolated git worktree. Never have two Engineers share a worktree.
+- Each Engineer subagent runs in an isolated git worktree in `.worktrees/`. Never have two Engineers share a worktree.
 - Task dependency order comes from the Architect's task-doc. Respect it.
 - An Engineer may only begin once its upstream dependencies are in `completed` state in `state.json`.
 - Engineers do not communicate with each other. Context is passed only through task-docs and the shared git history.
