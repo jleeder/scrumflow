@@ -57,7 +57,8 @@ When invoked, the Orchestrator determines the execution context:
 **New Run:**
 1. Confirm the working directory is a git repo.
 2. Derive a `<slug>` from the feature idea (kebab-case, short).
-3. Initialize the feature's state directory in `.scrum-flow/<slug>/`:
+3. Ensure `.scrum-flow/` and `.worktrees/` are added to the project's `.gitignore` file (create it if it doesn't exist).
+4. Initialize the feature's state directory in `.scrum-flow/<slug>/`:
    ```
    .scrum-flow/<slug>/
    ├── state.json
@@ -67,7 +68,7 @@ When invoked, the Orchestrator determines the execution context:
    ├── reviews/
    └── drafts/
    ```
-4. Write initial `state.json`:
+5. Write initial `state.json`:
    ```json
    {
      "version": "1.0",
