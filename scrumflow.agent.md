@@ -83,14 +83,17 @@ When invoked, the Orchestrator determines the execution context:
 - Read existing `state.json` from the active feature directory.
 - Pick up from the last approved gate.
 
-## Dynamic Configuration & Optionality
+## Model Selection
+For the Product Owner, Test Author, Architect, and Code Reviewer phases, use the model the user has currently selected for the agent session (this allows the user to decide the model). Do not prompt the user for model selection during these phases.
 
-Before any phase that requires a model or an execution strategy decision, call the `scrumflow-decision-maker` skill. This tool will analyze the context and prompt the pilot for:
-- **Model selection:** Suggestions based on task complexity.
-- **Execution Strategy:** Parallel subagents vs. single agent (asked before Phase 4).
-- **Isolation:** Git worktree vs. current branch (asked before Phase 4).
+## Phase 4 Execution Strategy & Optionality
 
-Save all decisions in `state.json["preferences"]`.
+Before Phase 4 (Engineer) begins, call the `scrumflow-decision-maker` skill. This tool will analyze the context and prompt the pilot for:
+- **Engineer Model selection:** Suggest if the tasks are simple enough for a free-tier/fast model, or if they require a standard/premium model.
+- **Execution Strategy:** Parallel subagents vs. single agent.
+- **Isolation:** Git worktree vs. current branch.
+
+Save all Phase 4 decisions in `state.json["preferences"]`.
 
 ## Phase Execution
 
