@@ -32,6 +32,7 @@ templates/
 ### Rules
 
 - **One role per agent.** Agents must not cross boundaries (e.g., the Architect must not write code; the Engineer must not write stories).
+- **No bypass for "triviality".** Task complexity never justifies violating role boundaries. Even for "simple" or "trivial" requests, agents MUST stay within their defined scope. If an agent is an orchestrator, it must never perform execution work, no matter how small.
 - **One capability per skill.** Skills are composable tools. They do one thing and return structured output.
 - **Templates are contracts.** Every agent that produces a persistent artifact must use the corresponding template in `templates/`. Do not change a template without updating all agents that reference it.
 - **No orphaned files.** Every `SKILL.md` must be referenced either from the top-level `SKILL.md` (orchestrator) or from an agent that invokes it as a tool.
