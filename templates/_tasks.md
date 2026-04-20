@@ -16,12 +16,12 @@ Linked to [[STORY-NNN]]
 
 ## Task List
 
-| Task ID | Name | Dependencies | Parallelism |
-|---|---|---|---|
-| TASK-NNN-1 | [Task description] | None | independent |
-| TASK-NNN-2 | [Task description] | TASK-NNN-1 | depends-on-TASK-NNN-1 |
-| TASK-NNN-3 | [Task description] | None | independent |
-| TASK-NNN-4 | [Task description] | TASK-NNN-2, TASK-NNN-3 | depends-on-TASK-NNN-2, TASK-NNN-3 |
+| Task ID | Name | Dependencies | Parallelism | TDD Required |
+|---|---|---|---|---|
+| TASK-NNN-1 | [Task description] | None | independent | Yes |
+| TASK-NNN-2 | [Task description] | TASK-NNN-1 | depends-on-TASK-NNN-1 | Yes |
+| TASK-NNN-3 | [Task description] | None | independent | Yes |
+| TASK-NNN-4 | [Task description] | TASK-NNN-2, TASK-NNN-3 | depends-on-TASK-NNN-2, TASK-NNN-3 | No |
 
 ## Execution Plan
 

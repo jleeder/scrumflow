@@ -44,14 +44,16 @@ Break the feature into discrete tasks. Each task should:
 - Be completable without requiring another in-progress task (unless dependency is declared)
 - Have a name that says what it does: "Add password reset token model" not "Database work"
 
+**TDD Applicability**: Decide if each task requires Test-Driven Development (TDD). Most feature work should be `TDD Required: Yes`. Tasks involving configuration, CI/CD pipelines, or declarative infrastructure should be `TDD Required: No`. The Orchestrator will present this to the pilot at Gate #3 so they can confirm this approach.
+
 **Dependency mapping**: Mark which tasks are independent (can run in parallel) and which depend on others. The Orchestrator uses this to schedule parallel Engineer subagents.
 
 ```
-TASK-001: Add password reset token model           [independent]
-TASK-002: Add reset request endpoint               [depends on TASK-001]
-TASK-003: Add reset confirmation endpoint          [depends on TASK-001]
-TASK-004: Send reset email on request              [depends on TASK-002]
-TASK-005: Add reset UI form                        [independent]
+TASK-001: Add password reset token model           [independent] [TDD: Yes]
+TASK-002: Add reset request endpoint               [depends on TASK-001] [TDD: Yes]
+TASK-003: Add reset confirmation endpoint          [depends on TASK-001] [TDD: Yes]
+TASK-004: Send reset email on request              [depends on TASK-002] [TDD: Yes]
+TASK-005: Configure GitHub Actions deployment      [independent] [TDD: No]
 ```
 
 ## Per-Task Documentation (Task-Docs)
@@ -62,6 +64,9 @@ For each task, write a task-doc. This is the most important output of the Archit
 
 ### Context
 What is this task doing and why? How does it fit into the larger feature? What BDD scenarios does it implement? If the task is downstream of another, what will already exist when this runs?
+
+### TDD Required
+Explicitly state either `Yes` or `No`. Use `No` only for configuration tasks (like CI/CD, Terraform) where writing a unit test is not applicable.
 
 ### Implementation Guidance
 Specific, concrete direction — not pseudocode, but clear enough to leave no ambiguity about approach:
@@ -107,6 +112,9 @@ Provide the exact command the Engineer should use to run the tests relevant to t
 This task creates the data model for storing password reset tokens. It's foundational — 
 TASK-002 (reset request endpoint) and TASK-003 (confirmation endpoint) both depend on it.
 It implements the token storage, expiry, and single-use requirements from the BDD spec.
+
+### TDD Required
+Yes
 
 ### Implementation Guidance
 Add a `PasswordResetToken` model in `src/models/`. Follow the existing BaseModel pattern 

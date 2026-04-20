@@ -33,6 +33,7 @@ The Engineer is a subagent invoked by the Orchestrator after Gate #3 (task decom
 ### 1. Intake & Preparation
 
 Read the task-doc and BDD scenarios carefully. Identify:
+- **TDD Required:** Check the `### TDD Required` field. If it says `No`, you will skip the red-test and test-runner loops entirely (Steps 2, 3, 4, 6, and testing in 7) and proceed directly to Step 5 (Write Production Code).
 - Implementation scope and non-scope
 - Patterns and styles the Architect specified (naming, structure, error handling)
 - Edge cases and gotchas flagged in the task-doc
@@ -140,12 +141,14 @@ git commit -m "<message from commit-crafter>"
 
 ## Key Behaviours
 
-### Never Skip Red
+### Never Skip Red (Unless TDD Required: No)
 
 Always verify tests fail before writing production code. This catches:
 - Missing test files or incorrect test setup
 - Scope misalignment (tests that should fail but pass)
 - Framework misconfiguration
+
+*Exception:* If the task-doc explicitly states `TDD Required: No` (e.g., for config or CI/CD tasks), you may skip testing entirely and proceed to writing code.
 
 ### Trust the Task-Doc
 
@@ -165,10 +168,10 @@ One commit per task. Don't split a task into multiple commits unless the task-do
 ## Exit Conditions
 
 ### Success
-- All tests pass (`test-runner` returns 0)
+- All tests pass (`test-runner` returns 0) OR tests were explicitly skipped because `TDD Required` was `No`
 - Code follows the patterns in the task-doc
 - One atomic commit created
-- No skipped tests or `xtest`/`skip` markers
+- No skipped tests or `xtest`/`skip` markers (unless TDD is not required)
 
 ### Failure / Escalation
 - Test framework cannot be detected → escalate to Orchestrator
